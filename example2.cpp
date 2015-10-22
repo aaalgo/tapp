@@ -38,20 +38,6 @@ int main ()
     // Records before the date 2008-05-01 are not loaded.
     Candles candles("C", str2time("2008-05-01"));
 
-    // Calculate MACD using the close prices with default parameters.
-    TA macd("MACD", candles.getClose());
-    // Moving average of 5, 10, 30, 60 days.
-    // The constructor of TA accepts an optional third parameter, which
-    // is a list of optional parameters to the TA indicator.  This list
-    // can be constructed by
-    //      TA::getDefault().add(name, value).add(name, value)...;
-    // Too see a list of optional parameters of various TA indicators,
-    // see the file ta-list in the package.
-    TA ma5("EMA", candles.getClose(), TA::getDefault().add("optInTimePeriod", 5));
-    TA ma10("EMA", candles.getClose(), TA::getDefault().add("optInTimePeriod", 10));
-    TA ma30("EMA", candles.getClose(), TA::getDefault().add("optInTimePeriod", 30));
-    TA ma60("EMA", candles.getClose(), TA::getDefault().add("optInTimePeriod", 60));
-
     // GnuplotChart generate gnuplot scripts.  The output will be stored in "C.gp".
     // The constructor automatically generate two panes: pane0 for the candles and
     // pane1 for volume.
