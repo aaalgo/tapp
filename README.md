@@ -4,16 +4,17 @@ TA++ is a C++ wrapper of TA-lib. I design this library for those who (mainly me)
 
 ## Prerequisites
 
--Boost
--TA-lib
+- Boost
+- TA-lib
 
 The library generates Gnuplot scripts as figures, though it doesn't depend on Gnuplot.
 
 ## Installation
 
 There are only two files in the library: ta++.h and ta++-plot.h. Just drop these files in somewhere your C++ compiler is aware of and you are done.
-Compile and Link
+
+## Compile and Link
 
 TA++ depends on two libraries: TA-lib and boost date & time. If you use g++ and the latest version of TA-lib, you need to add "-lboost_date_time -lta_lib" to your g++ commandline.
 
-
+To build the example program, type "make" in the project directory.
