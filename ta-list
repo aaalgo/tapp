@@ -1,0 +1,3012 @@
+NO-1
+GROUP:	Volume Indicators
+NAME:	AD
+HINT:	Chaikin A/D Line
+CAMELCASENAME:	Ad
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLCV
+	FLAGS:	HIGH	LOW	CLOSE	VOLUME
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-2
+GROUP:	Volume Indicators
+NAME:	ADOSC
+HINT:	Chaikin A/D Oscillator
+CAMELCASENAME:	AdOsc
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLCV
+	FLAGS:	HIGH	LOW	CLOSE	VOLUME
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInFastPeriod
+	DEFAULT:	3
+	DISPLAY NAME:	Fast Period
+	HINT:	Number of period for the fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInSlowPeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Slow Period
+	HINT:	Number of period for the slow MA
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-3
+GROUP:	Momentum Indicators
+NAME:	ADX
+HINT:	Average Directional Movement Index
+CAMELCASENAME:	Adx
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-4
+GROUP:	Momentum Indicators
+NAME:	ADXR
+HINT:	Average Directional Movement Index Rating
+CAMELCASENAME:	Adxr
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-5
+GROUP:	Momentum Indicators
+NAME:	APO
+HINT:	Absolute Price Oscillator
+CAMELCASENAME:	Apo
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInFastPeriod
+	DEFAULT:	12
+	DISPLAY NAME:	Fast Period
+	HINT:	Number of period for the fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInSlowPeriod
+	DEFAULT:	26
+	DISPLAY NAME:	Slow Period
+	HINT:	Number of period for the slow MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInMAType
+	DEFAULT:	0
+	DISPLAY NAME:	MA Type
+	HINT:	Type of Moving Average
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-6
+GROUP:	Momentum Indicators
+NAME:	AROON
+HINT:	Aroon
+CAMELCASENAME:	Aroon
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outAroonDown
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outAroonUp
+	FLAGS:
+
+NO-7
+GROUP:	Momentum Indicators
+NAME:	AROONOSC
+HINT:	Aroon Oscillator
+CAMELCASENAME:	AroonOsc
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-8
+GROUP:	Volatility Indicators
+NAME:	ATR
+HINT:	Average True Range
+CAMELCASENAME:	Atr
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-9
+GROUP:	Price Transform
+NAME:	AVGPRICE
+HINT:	Average Price
+CAMELCASENAME:	AvgPrice
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-10
+GROUP:	Overlap Studies
+NAME:	BBANDS
+HINT:	Bollinger Bands
+CAMELCASENAME:	Bbands
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	5
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [-3e+37, -2, 0.2, 2, 3e+37]
+	NAME:	optInNbDevUp
+	DEFAULT:	2
+	DISPLAY NAME:	Deviations up
+	HINT:	Deviation multiplier for upper band
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	RealRange [-3e+37, -2, 0.2, 2, 3e+37]
+	NAME:	optInNbDevDn
+	DEFAULT:	2
+	DISPLAY NAME:	Deviations down
+	HINT:	Deviation multiplier for lower band
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 4
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInMAType
+	DEFAULT:	0
+	DISPLAY NAME:	MA Type
+	HINT:	Type of Moving Average
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outRealUpperBand
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outRealMiddleBand
+	FLAGS:
+OUTPUT PARAMETER 3
+	TYPE:	Real
+	NAME:	outRealLowerBand
+	FLAGS:
+
+NO-11
+GROUP:	Statistic Functions
+NAME:	BETA
+HINT:	Beta
+CAMELCASENAME:	Beta
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal0
+	FLAGS:
+INPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	inReal1
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	5
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-12
+GROUP:	Momentum Indicators
+NAME:	BOP
+HINT:	Balance Of Power
+CAMELCASENAME:	Bop
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-13
+GROUP:	Momentum Indicators
+NAME:	CCI
+HINT:	Commodity Channel Index
+CAMELCASENAME:	Cci
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-14
+GROUP:	Pattern Recognition
+NAME:	CDL2CROWS
+HINT:	Two Crows
+CAMELCASENAME:	Cdl2Crows
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-15
+GROUP:	Pattern Recognition
+NAME:	CDL3BLACKCROWS
+HINT:	Three Black Crows
+CAMELCASENAME:	Cdl3BlackCrows
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-16
+GROUP:	Pattern Recognition
+NAME:	CDL3INSIDE
+HINT:	Three Inside Up/Down
+CAMELCASENAME:	Cdl3Inside
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-17
+GROUP:	Pattern Recognition
+NAME:	CDL3LINESTRIKE
+HINT:	Three-Line Strike 
+CAMELCASENAME:	Cdl3LineStrike
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-18
+GROUP:	Pattern Recognition
+NAME:	CDL3OUTSIDE
+HINT:	Three Outside Up/Down
+CAMELCASENAME:	Cdl3Outside
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-19
+GROUP:	Pattern Recognition
+NAME:	CDL3STARSINSOUTH
+HINT:	Three Stars In The South
+CAMELCASENAME:	Cdl3StarsInSouth
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-20
+GROUP:	Pattern Recognition
+NAME:	CDL3WHITESOLDIERS
+HINT:	Three Advancing White Soldiers
+CAMELCASENAME:	Cdl3WhiteSoldiers
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-21
+GROUP:	Pattern Recognition
+NAME:	CDLABANDONEDBABY
+HINT:	Abandoned Baby
+CAMELCASENAME:	CdlAbandonedBaby
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.3
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-22
+GROUP:	Pattern Recognition
+NAME:	CDLADVANCEBLOCK
+HINT:	Advance Block
+CAMELCASENAME:	CdlAdvanceBlock
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-23
+GROUP:	Pattern Recognition
+NAME:	CDLBELTHOLD
+HINT:	Belt-hold
+CAMELCASENAME:	CdlBeltHold
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-24
+GROUP:	Pattern Recognition
+NAME:	CDLBREAKAWAY
+HINT:	Breakaway
+CAMELCASENAME:	CdlBreakaway
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-25
+GROUP:	Pattern Recognition
+NAME:	CDLCLOSINGMARUBOZU
+HINT:	Closing Marubozu
+CAMELCASENAME:	CdlClosingMarubozu
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-26
+GROUP:	Pattern Recognition
+NAME:	CDLCONCEALBABYSWALL
+HINT:	Concealing Baby Swallow
+CAMELCASENAME:	CdlConcealBabysWall
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-27
+GROUP:	Pattern Recognition
+NAME:	CDLCOUNTERATTACK
+HINT:	Counterattack
+CAMELCASENAME:	CdlCounterAttack
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-28
+GROUP:	Pattern Recognition
+NAME:	CDLDARKCLOUDCOVER
+HINT:	Dark Cloud Cover
+CAMELCASENAME:	CdlDarkCloudCover
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.5
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-29
+GROUP:	Pattern Recognition
+NAME:	CDLDOJI
+HINT:	Doji
+CAMELCASENAME:	CdlDoji
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-30
+GROUP:	Pattern Recognition
+NAME:	CDLDOJISTAR
+HINT:	Doji Star
+CAMELCASENAME:	CdlDojiStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-31
+GROUP:	Pattern Recognition
+NAME:	CDLDRAGONFLYDOJI
+HINT:	Dragonfly Doji
+CAMELCASENAME:	CdlDragonflyDoji
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-32
+GROUP:	Pattern Recognition
+NAME:	CDLENGULFING
+HINT:	Engulfing Pattern
+CAMELCASENAME:	CdlEngulfing
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-33
+GROUP:	Pattern Recognition
+NAME:	CDLEVENINGDOJISTAR
+HINT:	Evening Doji Star
+CAMELCASENAME:	CdlEveningDojiStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.3
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-34
+GROUP:	Pattern Recognition
+NAME:	CDLEVENINGSTAR
+HINT:	Evening Star
+CAMELCASENAME:	CdlEveningStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.3
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-35
+GROUP:	Pattern Recognition
+NAME:	CDLGAPSIDESIDEWHITE
+HINT:	Up/Down-gap side-by-side white lines
+CAMELCASENAME:	CdlGapSideSideWhite
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-36
+GROUP:	Pattern Recognition
+NAME:	CDLGRAVESTONEDOJI
+HINT:	Gravestone Doji
+CAMELCASENAME:	CdlGravestoneDoji
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-37
+GROUP:	Pattern Recognition
+NAME:	CDLHAMMER
+HINT:	Hammer
+CAMELCASENAME:	CdlHammer
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-38
+GROUP:	Pattern Recognition
+NAME:	CDLHANGINGMAN
+HINT:	Hanging Man
+CAMELCASENAME:	CdlHangingMan
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-39
+GROUP:	Pattern Recognition
+NAME:	CDLHARAMI
+HINT:	Harami Pattern
+CAMELCASENAME:	CdlHarami
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-40
+GROUP:	Pattern Recognition
+NAME:	CDLHARAMICROSS
+HINT:	Harami Cross Pattern
+CAMELCASENAME:	CdlHaramiCross
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-41
+GROUP:	Pattern Recognition
+NAME:	CDLHIGHWAVE
+HINT:	High-Wave Candle
+CAMELCASENAME:	CdlHignWave
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-42
+GROUP:	Pattern Recognition
+NAME:	CDLHIKKAKE
+HINT:	Hikkake Pattern
+CAMELCASENAME:	CdlHikkake
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-43
+GROUP:	Pattern Recognition
+NAME:	CDLHIKKAKEMOD
+HINT:	Modified Hikkake Pattern
+CAMELCASENAME:	CdlHikkakeMod
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-44
+GROUP:	Pattern Recognition
+NAME:	CDLHOMINGPIGEON
+HINT:	Homing Pigeon
+CAMELCASENAME:	CdlHomingPigeon
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-45
+GROUP:	Pattern Recognition
+NAME:	CDLIDENTICAL3CROWS
+HINT:	Identical Three Crows
+CAMELCASENAME:	CdlIdentical3Crows
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-46
+GROUP:	Pattern Recognition
+NAME:	CDLINNECK
+HINT:	In-Neck Pattern
+CAMELCASENAME:	CdlInNeck
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-47
+GROUP:	Pattern Recognition
+NAME:	CDLINVERTEDHAMMER
+HINT:	Inverted Hammer
+CAMELCASENAME:	CdlInvertedHammer
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-48
+GROUP:	Pattern Recognition
+NAME:	CDLKICKING
+HINT:	Kicking
+CAMELCASENAME:	CdlKicking
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-49
+GROUP:	Pattern Recognition
+NAME:	CDLKICKINGBYLENGTH
+HINT:	Kicking - bull/bear determined by the longer marubozu
+CAMELCASENAME:	CdlKickingByLength
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-50
+GROUP:	Pattern Recognition
+NAME:	CDLLADDERBOTTOM
+HINT:	Ladder Bottom
+CAMELCASENAME:	CdlLadderBottom
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-51
+GROUP:	Pattern Recognition
+NAME:	CDLLONGLEGGEDDOJI
+HINT:	Long Legged Doji
+CAMELCASENAME:	CdlLongLeggedDoji
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-52
+GROUP:	Pattern Recognition
+NAME:	CDLLONGLINE
+HINT:	Long Line Candle
+CAMELCASENAME:	CdlLongLine
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-53
+GROUP:	Pattern Recognition
+NAME:	CDLMARUBOZU
+HINT:	Marubozu
+CAMELCASENAME:	CdlMarubozu
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-54
+GROUP:	Pattern Recognition
+NAME:	CDLMATCHINGLOW
+HINT:	Matching Low
+CAMELCASENAME:	CdlMatchingLow
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-55
+GROUP:	Pattern Recognition
+NAME:	CDLMATHOLD
+HINT:	Mat Hold
+CAMELCASENAME:	CdlMatHold
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.5
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-56
+GROUP:	Pattern Recognition
+NAME:	CDLMORNINGDOJISTAR
+HINT:	Morning Doji Star
+CAMELCASENAME:	CdlMorningDojiStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.3
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-57
+GROUP:	Pattern Recognition
+NAME:	CDLMORNINGSTAR
+HINT:	Morning Star
+CAMELCASENAME:	CdlMorningStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0, 0, 0, 3e+37]
+	NAME:	optInPenetration
+	DEFAULT:	0.3
+	DISPLAY NAME:	Penetration
+	HINT:	Percentage of penetration of a candle within another candle
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-58
+GROUP:	Pattern Recognition
+NAME:	CDLONNECK
+HINT:	On-Neck Pattern
+CAMELCASENAME:	CdlOnNeck
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-59
+GROUP:	Pattern Recognition
+NAME:	CDLPIERCING
+HINT:	Piercing Pattern
+CAMELCASENAME:	CdlPiercing
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-60
+GROUP:	Pattern Recognition
+NAME:	CDLRICKSHAWMAN
+HINT:	Rickshaw Man
+CAMELCASENAME:	CdlRickshawMan
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-61
+GROUP:	Pattern Recognition
+NAME:	CDLRISEFALL3METHODS
+HINT:	Rising/Falling Three Methods
+CAMELCASENAME:	CdlRiseFall3Methods
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-62
+GROUP:	Pattern Recognition
+NAME:	CDLSEPARATINGLINES
+HINT:	Separating Lines
+CAMELCASENAME:	CdlSeperatingLines
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-63
+GROUP:	Pattern Recognition
+NAME:	CDLSHOOTINGSTAR
+HINT:	Shooting Star
+CAMELCASENAME:	CdlShootingStar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-64
+GROUP:	Pattern Recognition
+NAME:	CDLSHORTLINE
+HINT:	Short Line Candle
+CAMELCASENAME:	CdlShortLine
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-65
+GROUP:	Pattern Recognition
+NAME:	CDLSPINNINGTOP
+HINT:	Spinning Top
+CAMELCASENAME:	CdlSpinningTop
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-66
+GROUP:	Pattern Recognition
+NAME:	CDLSTALLEDPATTERN
+HINT:	Stalled Pattern
+CAMELCASENAME:	CdlStalledPattern
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-67
+GROUP:	Pattern Recognition
+NAME:	CDLSTICKSANDWICH
+HINT:	Stick Sandwich
+CAMELCASENAME:	CdlStickSandwhich
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-68
+GROUP:	Pattern Recognition
+NAME:	CDLTAKURI
+HINT:	Takuri (Dragonfly Doji with very long lower shadow)
+CAMELCASENAME:	CdlTakuri
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-69
+GROUP:	Pattern Recognition
+NAME:	CDLTASUKIGAP
+HINT:	Tasuki Gap
+CAMELCASENAME:	CdlTasukiGap
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-70
+GROUP:	Pattern Recognition
+NAME:	CDLTHRUSTING
+HINT:	Thrusting Pattern
+CAMELCASENAME:	CdlThrusting
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-71
+GROUP:	Pattern Recognition
+NAME:	CDLTRISTAR
+HINT:	Tristar Pattern
+CAMELCASENAME:	CdlTristar
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-72
+GROUP:	Pattern Recognition
+NAME:	CDLUNIQUE3RIVER
+HINT:	Unique 3 River
+CAMELCASENAME:	CdlUnique3River
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-73
+GROUP:	Pattern Recognition
+NAME:	CDLUPSIDEGAP2CROWS
+HINT:	Upside Gap Two Crows
+CAMELCASENAME:	CdlUpsideGap2Crows
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-74
+GROUP:	Pattern Recognition
+NAME:	CDLXSIDEGAP3METHODS
+HINT:	Upside/Downside Gap Three Methods
+CAMELCASENAME:	CdlXSideGap3Methods
+FLAGS:	CANDELSTICK
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceOHLC
+	FLAGS:	OPEN	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-75
+GROUP:	Momentum Indicators
+NAME:	CMO
+HINT:	Chande Momentum Oscillator
+CAMELCASENAME:	Cmo
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-76
+GROUP:	Statistic Functions
+NAME:	CORREL
+HINT:	Pearson's Correlation Coefficient (r)
+CAMELCASENAME:	Correl
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal0
+	FLAGS:
+INPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	inReal1
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-77
+GROUP:	Overlap Studies
+NAME:	DEMA
+HINT:	Double Exponential Moving Average
+CAMELCASENAME:	Dema
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-78
+GROUP:	Momentum Indicators
+NAME:	DX
+HINT:	Directional Movement Index
+CAMELCASENAME:	Dx
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-79
+GROUP:	Overlap Studies
+NAME:	EMA
+HINT:	Exponential Moving Average
+CAMELCASENAME:	Ema
+FLAGS:	OVERLAP	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-80
+GROUP:	Cycle Indicators
+NAME:	HT_DCPERIOD
+HINT:	Hilbert Transform - Dominant Cycle Period
+CAMELCASENAME:	HtDcPeriod
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-81
+GROUP:	Cycle Indicators
+NAME:	HT_DCPHASE
+HINT:	Hilbert Transform - Dominant Cycle Phase
+CAMELCASENAME:	HtDcPhase
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-82
+GROUP:	Cycle Indicators
+NAME:	HT_PHASOR
+HINT:	Hilbert Transform - Phasor Components
+CAMELCASENAME:	HtPhasor
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outInPhase
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outQuadrature
+	FLAGS:
+
+NO-83
+GROUP:	Cycle Indicators
+NAME:	HT_SINE
+HINT:	Hilbert Transform - SineWave
+CAMELCASENAME:	HtSine
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outSine
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outLeadSine
+	FLAGS:
+
+NO-84
+GROUP:	Overlap Studies
+NAME:	HT_TRENDLINE
+HINT:	Hilbert Transform - Instantaneous Trendline
+CAMELCASENAME:	HtTrendline
+FLAGS:	OVERLAP	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-85
+GROUP:	Cycle Indicators
+NAME:	HT_TRENDMODE
+HINT:	Hilbert Transform - Trend vs Cycle Mode
+CAMELCASENAME:	HtTrendMode
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-86
+GROUP:	Overlap Studies
+NAME:	KAMA
+HINT:	Kaufman Adaptive Moving Average
+CAMELCASENAME:	Kama
+FLAGS:	OVERLAP	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-87
+GROUP:	Statistic Functions
+NAME:	LINEARREG
+HINT:	Linear Regression
+CAMELCASENAME:	LinearReg
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-88
+GROUP:	Statistic Functions
+NAME:	LINEARREG_ANGLE
+HINT:	Linear Regression Angle
+CAMELCASENAME:	LinearRegAngle
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-89
+GROUP:	Statistic Functions
+NAME:	LINEARREG_INTERCEPT
+HINT:	Linear Regression Intercept
+CAMELCASENAME:	LinearRegIntercept
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-90
+GROUP:	Statistic Functions
+NAME:	LINEARREG_SLOPE
+HINT:	Linear Regression Slope
+CAMELCASENAME:	LinearRegSlope
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-91
+GROUP:	Overlap Studies
+NAME:	MA
+HINT:	All Moving Average
+CAMELCASENAME:	MovingAverage
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInMAType
+	DEFAULT:	0
+	DISPLAY NAME:	MA Type
+	HINT:	Type of Moving Average
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-92
+GROUP:	Momentum Indicators
+NAME:	MACD
+HINT:	Moving Average Convergence/Divergence
+CAMELCASENAME:	Macd
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInFastPeriod
+	DEFAULT:	12
+	DISPLAY NAME:	Fast Period
+	HINT:	Number of period for the fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInSlowPeriod
+	DEFAULT:	26
+	DISPLAY NAME:	Slow Period
+	HINT:	Number of period for the slow MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInSignalPeriod
+	DEFAULT:	9
+	DISPLAY NAME:	Signal Period
+	HINT:	Smoothing for the signal line (nb of period)
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outMACD
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outMACDSignal
+	FLAGS:
+OUTPUT PARAMETER 3
+	TYPE:	Real
+	NAME:	outMACDHist
+	FLAGS:
+
+NO-93
+GROUP:	Momentum Indicators
+NAME:	MACDEXT
+HINT:	MACD with controllable MA type
+CAMELCASENAME:	MacdExt
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInFastPeriod
+	DEFAULT:	12
+	DISPLAY NAME:	Fast Period
+	HINT:	Number of period for the fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInFastMAType
+	DEFAULT:	0
+	DISPLAY NAME:	Fast MA
+	HINT:	Type of Moving Average for fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInSlowPeriod
+	DEFAULT:	26
+	DISPLAY NAME:	Slow Period
+	HINT:	Number of period for the slow MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 4
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInSlowMAType
+	DEFAULT:	0
+	DISPLAY NAME:	Slow MA
+	HINT:	Type of Moving Average for slow MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 5
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInSignalPeriod
+	DEFAULT:	9
+	DISPLAY NAME:	Signal Period
+	HINT:	Smoothing for the signal line (nb of period)
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 6
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInSignalMAType
+	DEFAULT:	0
+	DISPLAY NAME:	Signal MA
+	HINT:	Type of Moving Average for signal line
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outMACD
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outMACDSignal
+	FLAGS:
+OUTPUT PARAMETER 3
+	TYPE:	Real
+	NAME:	outMACDHist
+	FLAGS:
+
+NO-94
+GROUP:	Momentum Indicators
+NAME:	MACDFIX
+HINT:	Moving Average Convergence/Divergence Fix 12/26
+CAMELCASENAME:	MacdFix
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInSignalPeriod
+	DEFAULT:	9
+	DISPLAY NAME:	Signal Period
+	HINT:	Smoothing for the signal line (nb of period)
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outMACD
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outMACDSignal
+	FLAGS:
+OUTPUT PARAMETER 3
+	TYPE:	Real
+	NAME:	outMACDHist
+	FLAGS:
+
+NO-95
+GROUP:	Overlap Studies
+NAME:	MAMA
+HINT:	MESA Adaptive Moving Average
+CAMELCASENAME:	Mama
+FLAGS:	OVERLAP	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0.01, 0.21, 0.01, 0.8, 0.99]
+	NAME:	optInFastLimit
+	DEFAULT:	0.5
+	DISPLAY NAME:	Fast Limit
+	HINT:	Upper limit use in the adaptive algorithm
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [0.01, 0.01, 0.01, 0.6, 0.99]
+	NAME:	optInSlowLimit
+	DEFAULT:	0.05
+	DISPLAY NAME:	Slow Limit
+	HINT:	Lower limit use in the adaptive algorithm
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outMAMA
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outFAMA
+	FLAGS:
+
+NO-96
+GROUP:	Math Operators
+NAME:	MAX
+HINT:	Highest value over a specified period
+CAMELCASENAME:	Max
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-97
+GROUP:	Math Operators
+NAME:	MAXINDEX
+HINT:	Index of highest value over a specified period
+CAMELCASENAME:	MaxIndex
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-98
+GROUP:	Price Transform
+NAME:	MEDPRICE
+HINT:	Median Price
+CAMELCASENAME:	MedPrice
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-99
+GROUP:	Momentum Indicators
+NAME:	MFI
+HINT:	Money Flow Index
+CAMELCASENAME:	Mfi
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLCV
+	FLAGS:	HIGH	LOW	CLOSE	VOLUME
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-100
+GROUP:	Overlap Studies
+NAME:	MIDPOINT
+HINT:	MidPoint over period
+CAMELCASENAME:	MidPoint
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-101
+GROUP:	Overlap Studies
+NAME:	MIDPRICE
+HINT:	Midpoint Price over period
+CAMELCASENAME:	MidPrice
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-102
+GROUP:	Math Operators
+NAME:	MIN
+HINT:	Lowest value over a specified period
+CAMELCASENAME:	Min
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-103
+GROUP:	Math Operators
+NAME:	MININDEX
+HINT:	Index of lowest value over a specified period
+CAMELCASENAME:	MinIndex
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outInteger
+	FLAGS:
+
+NO-104
+GROUP:	Math Operators
+NAME:	MINMAX
+HINT:	Lowest and highest values over a specified period
+CAMELCASENAME:	MinMax
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outMin
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outMax
+	FLAGS:
+
+NO-105
+GROUP:	Math Operators
+NAME:	MINMAXINDEX
+HINT:	Indexes of lowest and highest values over a specified period
+CAMELCASENAME:	MinMaxIndex
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Integer
+	NAME:	outMinIdx
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Integer
+	NAME:	outMaxIdx
+	FLAGS:
+
+NO-106
+GROUP:	Momentum Indicators
+NAME:	MINUS_DI
+HINT:	Minus Directional Indicator
+CAMELCASENAME:	MinusDI
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-107
+GROUP:	Momentum Indicators
+NAME:	MINUS_DM
+HINT:	Minus Directional Movement
+CAMELCASENAME:	MinusDM
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-108
+GROUP:	Momentum Indicators
+NAME:	MOM
+HINT:	Momentum
+CAMELCASENAME:	Mom
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-109
+GROUP:	Volatility Indicators
+NAME:	NATR
+HINT:	Normalized Average True Range
+CAMELCASENAME:	Natr
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-110
+GROUP:	Volume Indicators
+NAME:	OBV
+HINT:	On Balance Volume
+CAMELCASENAME:	Obv
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+INPUT PARAMETER 2
+	TYPE:	Price
+	NAME:	inPriceV
+	FLAGS:	VOLUME
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-111
+GROUP:	Momentum Indicators
+NAME:	PLUS_DI
+HINT:	Plus Directional Indicator
+CAMELCASENAME:	PlusDI
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-112
+GROUP:	Momentum Indicators
+NAME:	PLUS_DM
+HINT:	Plus Directional Movement
+CAMELCASENAME:	PlusDM
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-113
+GROUP:	Momentum Indicators
+NAME:	PPO
+HINT:	Percentage Price Oscillator
+CAMELCASENAME:	Ppo
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInFastPeriod
+	DEFAULT:	12
+	DISPLAY NAME:	Fast Period
+	HINT:	Number of period for the fast MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInSlowPeriod
+	DEFAULT:	26
+	DISPLAY NAME:	Slow Period
+	HINT:	Number of period for the slow MA
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInMAType
+	DEFAULT:	0
+	DISPLAY NAME:	MA Type
+	HINT:	Type of Moving Average
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-114
+GROUP:	Momentum Indicators
+NAME:	ROC
+HINT:	Rate of change : ((price/prevPrice)-1)*100
+CAMELCASENAME:	Roc
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-115
+GROUP:	Momentum Indicators
+NAME:	ROCP
+HINT:	Rate of change Percentage: (price-prevPrice)/prevPrice
+CAMELCASENAME:	RocP
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-116
+GROUP:	Momentum Indicators
+NAME:	ROCR
+HINT:	Rate of change ratio: (price/prevPrice)
+CAMELCASENAME:	RocR
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-117
+GROUP:	Momentum Indicators
+NAME:	ROCR100
+HINT:	Rate of change ratio 100 scale: (price/prevPrice)*100
+CAMELCASENAME:	RocR100
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	10
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-118
+GROUP:	Momentum Indicators
+NAME:	RSI
+HINT:	Relative Strength Index
+CAMELCASENAME:	Rsi
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-119
+GROUP:	Overlap Studies
+NAME:	SAR
+HINT:	Parabolic SAR
+CAMELCASENAME:	Sar
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [0, 0.01, 0.01, 0.2, 3e+37]
+	NAME:	optInAcceleration
+	DEFAULT:	0.02
+	DISPLAY NAME:	Acceleration Factor
+	HINT:	Acceleration Factor used up to the Maximum value
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [0, 0.2, 0.01, 0.4, 3e+37]
+	NAME:	optInMaximum
+	DEFAULT:	0.2
+	DISPLAY NAME:	AF Maximum
+	HINT:	Acceleration Factor Maximum value
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-120
+GROUP:	Overlap Studies
+NAME:	SAREXT
+HINT:	Parabolic SAR - Extended
+CAMELCASENAME:	SarExt
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHL
+	FLAGS:	HIGH	LOW
+OPT INPUT PARAMETER 1
+	TYPE:	RealRange [-3e+37, 0, 0, 0, 3e+37]
+	NAME:	optInStartValue
+	DEFAULT:	0
+	DISPLAY NAME:	Start Value
+	HINT:	Start value and direction. 0 for Auto, >0 for Long, <0 for Short
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [0, 0.01, 0.01, 0.15, 3e+37]
+	NAME:	optInOffsetOnReverse
+	DEFAULT:	0
+	DISPLAY NAME:	Offset on Reverse
+	HINT:	Percent offset added/removed to initial stop on short/long reversal
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	RealRange [0, 0.01, 0.01, 0.19, 3e+37]
+	NAME:	optInAccelerationInitLong
+	DEFAULT:	0.02
+	DISPLAY NAME:	AF Init Long
+	HINT:	Acceleration Factor initial value for the Long direction
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 4
+	TYPE:	RealRange [0, 0.01, 0.01, 0.2, 3e+37]
+	NAME:	optInAccelerationLong
+	DEFAULT:	0.02
+	DISPLAY NAME:	AF Long
+	HINT:	Acceleration Factor for the Long direction
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 5
+	TYPE:	RealRange [0, 0.2, 0.01, 0.4, 3e+37]
+	NAME:	optInAccelerationMaxLong
+	DEFAULT:	0.2
+	DISPLAY NAME:	AF Max Long
+	HINT:	Acceleration Factor maximum value for the Long direction
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 6
+	TYPE:	RealRange [0, 0.01, 0.01, 0.19, 3e+37]
+	NAME:	optInAccelerationInitShort
+	DEFAULT:	0.02
+	DISPLAY NAME:	AF Init Short
+	HINT:	Acceleration Factor initial value for the Short direction
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 7
+	TYPE:	RealRange [0, 0.01, 0.01, 0.2, 3e+37]
+	NAME:	optInAccelerationShort
+	DEFAULT:	0.02
+	DISPLAY NAME:	AF Short
+	HINT:	Acceleration Factor for the Short direction
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 8
+	TYPE:	RealRange [0, 0.2, 0.01, 0.4, 3e+37]
+	NAME:	optInAccelerationMaxShort
+	DEFAULT:	0.2
+	DISPLAY NAME:	AF Max Short
+	HINT:	Acceleration Factor maximum value for the Short direction
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-121
+GROUP:	Overlap Studies
+NAME:	SMA
+HINT:	Simple Moving Average
+CAMELCASENAME:	Sma
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-122
+GROUP:	Statistic Functions
+NAME:	STDDEV
+HINT:	Standard Deviation
+CAMELCASENAME:	StdDev
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	5
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [-3e+37, -2, 0.2, 2, 3e+37]
+	NAME:	optInNbDev
+	DEFAULT:	1
+	DISPLAY NAME:	Deviations
+	HINT:	Nb of deviations
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-123
+GROUP:	Momentum Indicators
+NAME:	STOCH
+HINT:	Stochastic
+CAMELCASENAME:	Stoch
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInFastK_Period
+	DEFAULT:	5
+	DISPLAY NAME:	Fast-K Period
+	HINT:	Time period for building the Fast-K line
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInSlowK_Period
+	DEFAULT:	3
+	DISPLAY NAME:	Slow-K Period
+	HINT:	Smoothing for making the Slow-K line. Usually set to 3
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInSlowK_MAType
+	DEFAULT:	0
+	DISPLAY NAME:	Slow-K MA
+	HINT:	Type of Moving Average for Slow-K
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 4
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInSlowD_Period
+	DEFAULT:	3
+	DISPLAY NAME:	Slow-D Period
+	HINT:	Smoothing for making the Slow-D line
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 5
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInSlowD_MAType
+	DEFAULT:	0
+	DISPLAY NAME:	Slow-D MA
+	HINT:	Type of Moving Average for Slow-D
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outSlowK
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outSlowD
+	FLAGS:
+
+NO-124
+GROUP:	Momentum Indicators
+NAME:	STOCHF
+HINT:	Stochastic Fast
+CAMELCASENAME:	StochF
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInFastK_Period
+	DEFAULT:	5
+	DISPLAY NAME:	Fast-K Period
+	HINT:	Time period for building the Fast-K line
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInFastD_Period
+	DEFAULT:	3
+	DISPLAY NAME:	Fast-D Period
+	HINT:	Smoothing for making the Fast-D line. Usually set to 3
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInFastD_MAType
+	DEFAULT:	0
+	DISPLAY NAME:	Fast-D MA
+	HINT:	Type of Moving Average for Fast-D
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outFastK
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outFastD
+	FLAGS:
+
+NO-125
+GROUP:	Momentum Indicators
+NAME:	STOCHRSI
+HINT:	Stochastic Relative Strength Index
+CAMELCASENAME:	StochRsi
+FLAGS:	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInFastK_Period
+	DEFAULT:	5
+	DISPLAY NAME:	Fast-K Period
+	HINT:	Time period for building the Fast-K line
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInFastD_Period
+	DEFAULT:	3
+	DISPLAY NAME:	Fast-D Period
+	HINT:	Smoothing for making the Fast-D line. Usually set to 3
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 4
+	TYPE:	IntegerList
+		0:	SMA
+		1:	EMA
+		2:	WMA
+		3:	DEMA
+		4:	TEMA
+		5:	TRIMA
+		6:	KAMA
+		7:	MAMA
+		8:	T3
+	NAME:	optInFastD_MAType
+	DEFAULT:	0
+	DISPLAY NAME:	Fast-D MA
+	HINT:	Type of Moving Average for Fast-D
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outFastK
+	FLAGS:
+OUTPUT PARAMETER 2
+	TYPE:	Real
+	NAME:	outFastD
+	FLAGS:
+
+NO-126
+GROUP:	Math Operators
+NAME:	SUM
+HINT:	Summation
+CAMELCASENAME:	Sum
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-127
+GROUP:	Overlap Studies
+NAME:	T3
+HINT:	Triple Exponential Moving Average (T3)
+CAMELCASENAME:	T3
+FLAGS:	OVERLAP	UNST_PER
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	5
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [0, 0.01, 0.05, 1, 1]
+	NAME:	optInVFactor
+	DEFAULT:	0.7
+	DISPLAY NAME:	Volume Factor
+	HINT:	Volume Factor
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-128
+GROUP:	Overlap Studies
+NAME:	TEMA
+HINT:	Triple Exponential Moving Average
+CAMELCASENAME:	Tema
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-129
+GROUP:	Volatility Indicators
+NAME:	TRANGE
+HINT:	True Range
+CAMELCASENAME:	TrueRange
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-130
+GROUP:	Overlap Studies
+NAME:	TRIMA
+HINT:	Triangular Moving Average
+CAMELCASENAME:	Trima
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-131
+GROUP:	Momentum Indicators
+NAME:	TRIX
+HINT:	1-day Rate-Of-Change (ROC) of a Triple Smooth EMA
+CAMELCASENAME:	Trix
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-132
+GROUP:	Statistic Functions
+NAME:	TSF
+HINT:	Time Series Forecast
+CAMELCASENAME:	Tsf
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-133
+GROUP:	Price Transform
+NAME:	TYPPRICE
+HINT:	Typical Price
+CAMELCASENAME:	TypPrice
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-134
+GROUP:	Momentum Indicators
+NAME:	ULTOSC
+HINT:	Ultimate Oscillator
+CAMELCASENAME:	UltOsc
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod1
+	DEFAULT:	7
+	DISPLAY NAME:	First Period
+	HINT:	Number of bars for 1st period.
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod2
+	DEFAULT:	14
+	DISPLAY NAME:	Second Period
+	HINT:	Number of bars fro 2nd period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 3
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod3
+	DEFAULT:	28
+	DISPLAY NAME:	Third Period
+	HINT:	Number of bars for 3rd period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-135
+GROUP:	Statistic Functions
+NAME:	VAR
+HINT:	Variance
+CAMELCASENAME:	Variance
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [1, 1, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	5
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OPT INPUT PARAMETER 2
+	TYPE:	RealRange [-3e+37, -2, 0.2, 2, 3e+37]
+	NAME:	optInNbDev
+	DEFAULT:	1
+	DISPLAY NAME:	Deviations
+	HINT:	Nb of deviations
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-136
+GROUP:	Price Transform
+NAME:	WCLPRICE
+HINT:	Weighted Close Price
+CAMELCASENAME:	WclPrice
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-137
+GROUP:	Momentum Indicators
+NAME:	WILLR
+HINT:	Williams' %R
+CAMELCASENAME:	WillR
+FLAGS:
+INPUT PARAMETER 1
+	TYPE:	Price
+	NAME:	inPriceHLC
+	FLAGS:	HIGH	LOW	CLOSE
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	14
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
+NO-138
+GROUP:	Overlap Studies
+NAME:	WMA
+HINT:	Weighted Moving Average
+CAMELCASENAME:	Wma
+FLAGS:	OVERLAP
+INPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	inReal
+	FLAGS:
+OPT INPUT PARAMETER 1
+	TYPE:	IntegerRange [2, 4, 1, 200, 100000]
+	NAME:	optInTimePeriod
+	DEFAULT:	30
+	DISPLAY NAME:	Time Period
+	HINT:	Number of period
+	HELP FILE:	(null)
+OUTPUT PARAMETER 1
+	TYPE:	Real
+	NAME:	outReal
+	FLAGS:
+
