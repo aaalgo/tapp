@@ -256,7 +256,8 @@ class GnuplotChart: public Chart
     };
 
     std::vector<GnuplotPane*> panes;
-    std::string path;
+    std::string script_path;
+    std::string image_path;
 
     void addDefaultPanes (const Candles &candles)
     {
@@ -268,9 +269,10 @@ public:
      * \param name Name of the chart.
      * \param path Path of the output file.
      */
-    GnuplotChart (const std::string &name, const std::string &_path = ""): Chart(name), path(_path) {}
-    GnuplotChart (const std::string &name, const Candles &candles, const std::string &_path = "")
-        : Chart(name), path(_path)
+    GnuplotChart (const std::string &name, const std::string &_script_path = "", const std::string &_image_path = ""): Chart(name), script_path(_script_path), image_path(_image_path) {}
+
+    GnuplotChart (const std::string &name, const Candles &candles, const std::string &_script_path = "", const std::string &_image_path = "")
+        : Chart(name), script_path(_script_path), image_path(_image_path) 
     {
         addDefaultPanes(candles);
     }
@@ -302,18 +304,21 @@ public:
 
     virtual void render ()
     {
-        if (path.size() == 0) {
-            path = getName() + ".gp";
+        if (script_path.size() == 0) {
+            script_path = getName() + ".gp";
+        }
+        if (image_path.size() == 0) {
+            image_path = getName() + ".png";
         }
 
-        std::ofstream fout(path.c_str());
+        std::ofstream fout(script_path.c_str());
         
         int height = 480 * (2 + panes.size()) / 3;
         double ratio = 1.0 / (2 + panes.size());
         double acc = 0;
         
         fout << "set terminal png size 800, " << height << std::endl;
-        fout << "set output \"" << getName() << ".png\"" << std::endl;
+        fout << "set output \"" << image_path << "\"" << std::endl;
         fout << "set grid\n" << std::endl;
         fout << "set key tmargin left horizontal" << std::endl;
         fout << "set lmargin 10" << std::endl;
