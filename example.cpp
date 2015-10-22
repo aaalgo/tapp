@@ -57,10 +57,10 @@ int main ()
     // pane1 for volume.
     GnuplotChart chart("C", candles);
     // Draw the moving averages on pane 0.
-    chart.getPane(0)->draw(ma5);
-    chart.getPane(0)->draw(ma10);
-    chart.getPane(0)->draw(ma30);
-    chart.getPane(0)->draw(ma60);
+    chart.getPane(0)->draw(ma5, "MA5");
+    chart.getPane(0)->draw(ma10, "MA10");
+    chart.getPane(0)->draw(ma30, "MA30");
+    chart.getPane(0)->draw(ma60, "MA60");
     // Add a MACD pane.
     chart.addPane("MACD")->draw(macd);
     // Generate the output.
